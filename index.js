@@ -20,7 +20,7 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 app.get("/cadastro", (req, res) => {
-  res.render("cadastro");
+  res.render("signup");
 });
 
 app.get("/usuario", (req, res) => {
@@ -29,10 +29,6 @@ app.get("/usuario", (req, res) => {
 
 app.get("/logar", (req, res) => {
   res.render("login");
-});
-
-app.get("/signup", (req, res) => {
-  res.render("signup");
 });
 
 app.get("/editar/:id", (req, res) => {
@@ -82,12 +78,13 @@ app.post("/cadastrar", (req, res) => {
   const nome = req.body.txtName;
   const email = req.body.email;
   const cargo = req.body.txtCargo;
+  var senha = "";
 
-  if (req.body.txtPass == req.body.re_pass) {
-    const senha = req.body.txtPass;
+  if (req.body.txtPass === req.body.re_pass) {
+    senha = req.body.txtPass;
   } else {
     const message = "senha diferentes";
-    return message;
+    console.log(message);
   }
 
   const sql = `INSERT INTO usuarios (nome, username, cargo, senha, email) VALUES ('${nome}','${user}', '${cargo}','${senha}','${email}')`;
@@ -104,12 +101,12 @@ app.post("/cadastrar", (req, res) => {
 
 app.post("/edit", async (req, res) => {
   const id = req.body.txtId;
-  const user = req.body.txtNome;
-  const email = req.body.txtEmail;
-  const senha = req.body.txtSenha;
+  const user = req.body.txtUser;
+  const nome = req.body.txtName;
+  const email = req.body.email;
   const cargo = req.body.txtCargo;
 
-  const sql = `UPDATE usuarios SET nome = '${user}', email = '${email}',senha = '${senha}',cargo = '${cargo}' WHERE id = ${id}`;
+  const sql = `UPDATE usuarios SET username = '${user}', nome = '${nome}', email = '${email}',cargo = '${cargo}' WHERE id = ${id}`;
 
   conn.query(sql, function (err) {
     if (err) {

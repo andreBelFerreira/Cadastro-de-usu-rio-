@@ -1,0 +1,82 @@
+<div class="main">
+  <!-- Sign up form -->
+  <section class="signup">
+    <div class="container">
+      <div class="signup-content">
+        <div class="signup-form">
+          <h4 class="form-title">Cadastrar usuário</h4>
+          <form action="/cadastrar" method="POST">
+            <div class="form-group">
+              <label for="name"><i
+                  class="zmdi zmdi-account material-icons-name"
+                ></i></label>
+              <input
+                type="text"
+                name="txtName"
+                id="txtName"
+                placeholder="Nome"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="zmdi zmdi-account-box"></i></label>
+              <input
+                type="txt"
+                name="txtUser"
+                id="txtUser"
+                placeholder="Username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="zmdi zmdi-email"></i></label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="E-mail"
+              />
+            </div>
+            <div class="form-group">
+              <label for="txtPass"><i class="zmdi zmdi-card-travel"></i></label>
+              <input
+                type="text"
+                name="txtCargo"
+                id="txtCargo"
+                placeholder="Cargo"
+              />
+            </div>
+            <div class="form-group">
+              <label for="txtPass"><i class="zmdi zmdi-lock"></i></label>
+              <input
+                type="password"
+                name="txtPass"
+                id="txtPass"
+                placeholder="Senha"
+              />
+            </div>
+            <div class="form-group">
+              <label for="re-pass"><i
+                  class="zmdi zmdi-lock-outline"
+                ></i></label>
+              <input
+                type="password"
+                name="re_pass"
+                id="re_pass"
+                placeholder="Repita a senha"
+              />
+            </div>
+
+            <div class="form-group form-button">
+              <input type="submit" class="btn btn-primary" value="Cadastrar" />
+            </div>
+          </form>
+        </div>
+        <div class="signup-image">
+          <figure><img
+              src="images/signup-image.jpg"
+              alt="sing up image"
+            /></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

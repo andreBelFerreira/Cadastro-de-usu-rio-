@@ -23,8 +23,16 @@ app.get("/cadastro", (req, res) => {
   res.render("cadastro");
 });
 
-app.get("/home", (req, res) => {
-  res.render("index");
+app.get("/usuario", (req, res) => {
+  res.render("usuario");
+});
+
+app.get("/logar", (req, res) => {
+  res.render("login");
+});
+
+app.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 app.get("/editar/:id", (req, res) => {
@@ -55,13 +63,34 @@ app.post("/login", (req, res) => {
   });
 });
 
-app.post("/cadastrar", (req, res) => {
-  const user = req.body.txtNome;
-  const email = req.body.txtEmail;
+app.post("/signup", (req, res) => {
+  const user = req.body.txtUsuario;
   const senha = req.body.txtSenha;
+  const sql = `SELECT * FROM usuarios WHERE id = ${user} AND senha = '${senha}'`;
+  conn.query(sql, function (err, data) {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      res.redirect("/home");
+    }
+  });
+});
+
+app.post("/cadastrar", (req, res) => {
+  const user = req.body.txtUser;
+  const nome = req.body.txtName;
+  const email = req.body.email;
   const cargo = req.body.txtCargo;
 
-  const sql = `INSERT INTO usuarios (nome, cargo, senha, email) VALUES ('${user}', '${cargo}','${senha}','${email}')`;
+  if (req.body.txtPass == req.body.re_pass) {
+    const senha = req.body.txtPass;
+  } else {
+    const message = "senha diferentes";
+    return message;
+  }
+
+  const sql = `INSERT INTO usuarios (nome, username, cargo, senha, email) VALUES ('${nome}','${user}', '${cargo}','${senha}','${email}')`;
 
   conn.query(sql, function (err) {
     if (err) {

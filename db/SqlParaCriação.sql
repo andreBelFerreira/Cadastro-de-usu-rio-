@@ -7,25 +7,29 @@ CREATE TABLE
 	`Usuarios` (
 		`ID` INT NOT NULL AUTO_INCREMENT,
 		`Nome` VARCHAR(100) NULL DEFAULT NULL,
+		`Username` VARCHAR(100) NOT NULL,
 		`Cargo` VARCHAR(40) NULL DEFAULT NULL,
 		`Senha` VARCHAR(100) NULL DEFAULT NULL,
 		`Email` VARCHAR(100) NULL DEFAULT NULL,
 		PRIMARY KEY (`ID`)
-	) COLLATE = 'utf8mb4_0900_ai_ci';
+	) 
 
 -- Selecionar o usuario
 SELECT
 	*
 FROM
 	usuarios
-
-	-- Inserir um novo usuário
+		
+-- Inserir um novo usuário
 INSERT INTO
-	usuarios (Nome, Cargo, Senha, Email)
+	`CrudUsuarios`.`usuarios` (Nome, Username, Cargo, Senha, Email)
 VALUES
 	(
 		'Andre Luiz Belmonte',
+		'andBel11'
 		'Analista de sistema junior',
 		'And123',
 		'belmonte_al@outlook.com'
 	)
+
+DROP TABLE usuarios

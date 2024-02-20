@@ -1,0 +1,14 @@
+# CRIANDO UM CADASTRO DE USUARIO
+
+## Referencias
+
+- Node.js
+- Bootstrap 5
+- Express-Handlebars
+- Express
+- MySql
+- Express-session
+
+## Realizado
+
+Esse projeto foi criado para estudos, onde é criado um usuário, exibido, editado e ainda exclui.

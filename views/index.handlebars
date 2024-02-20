@@ -1,0 +1,20 @@
+<h1 class="text-center">Bem-vindo ao sistema de usuário</h1>
+<div class="row">
+  {{#each users}}
+
+    <div class="card col-xl-2 col-lg-12 pr-3 mx-2">
+      <div class="card-body mr-3">
+        <h5>{{this.ID}} - {{this.Nome}}</h5>
+        <p>{{this.Cargo}}</p>
+        <p>{{this.Email}}</p>
+
+        <div class="row">
+          <a href="/editar/{{this.ID}}" class="btn btn-primary col-6">Editar</a>
+          <form action="/deletar/{{this.ID}}" method="POST" class="col-6 m-0">
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+          </form>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

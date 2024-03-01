@@ -1,4 +1,16 @@
-# Cadastro de usuário
+# CRIANDO UM CADASTRO DE USUARIO
 
-Sistema criado para que possa cadastrar usuários novos utilizando Node, Mysql, Express, Express Handlebars.
-Nesse sistema é cadastrado o usuario para que acesse via login.
+## Referencias
+
+- Node.js
+- Bootstrap 5
+- Express-Handlebars
+- Express
+- MySql
+- Express-session
+- Bcryptjs
+
+## Realizado
+
+Esse projeto foi criado para estudos, onde é criado um usuário, exibido, editado e ainda exclui.
+Foi criado uma tela de login, onde para cadastrar o usuario tem que ter acesso antes.

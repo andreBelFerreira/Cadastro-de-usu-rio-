@@ -1,20 +1,31 @@
-<h1 class="text-center">Bem-vindo ao sistema de usuário</h1>
-<div class="row">
-  {{#each users}}
+<div class="container bg-light pb-3">
+  <h1 class="text-center py-3">Bem-vindo ao sistema de usuário <b>{{{session.Nome}}}</b></h1>
+  <div class="row">
+    {{#each users}}
 
-    <div class="card col-xl-3 col-lg-6 col-md-12 p-0 ps-2 ms-xl-3">
-      <div class="card-body">
-        <h5>{{this.Nome}}</h5>
-        <p>{{this.Cargo}}</p>
-        <p>{{this.Email}}</p>
+      <div class="card col-xl-4 col-lg-6 col-md-12 p-0 ps-2 ms-xl-3">
+        <div class="card-body">
+          <h5>{{this.Nome}}</h5>
+          <p>{{this.Cargo}}</p>
+          <p>{{this.Email}}</p>
 
-        <div class="row">
-          <a href="/editar/{{this.ID}}" class="btn btn-primary col-6">Editar</a>
-          <form action="/deletar/{{this.ID}}" method="POST" class="col-6 m-0">
-            <input type="submit" value="Excluir" class="btn btn-danger" />
-          </form>
+          <div class="row">
+            <a
+              href="/editar/{{this.ID}}"
+              class="btn btn-primary col-6"
+            >Editar</a>
+            <form action="/deletar/{{this.ID}}" method="POST" class="col-6 m-0">
+              <div class="d-grid gap-2">
+                <input
+                  type="submit"
+                  value="Excluir"
+                  class="btn btn-danger btn-block"
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  {{/each}}
+    {{/each}}
+  </div>
 </div>

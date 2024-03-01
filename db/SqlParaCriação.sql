@@ -15,21 +15,17 @@ CREATE TABLE
 	) 
 
 -- Selecionar o usuario
-SELECT
-	*
-FROM
-	usuarios
+SELECT *
+FROM usuarios
 		
 -- Inserir um novo usuário
 INSERT INTO
-	`CrudUsuarios`.`usuarios` (Nome, Username, Cargo, Senha, Email)
+	`CrudUsuario`.`usuarios` (Nome, Username, Cargo, Senha, Email)
 VALUES
 	(
 		'Andre Luiz Belmonte',
-		'andBel11'
+		'andBel11',
 		'Analista de sistema junior',
 		'And123',
 		'belmonte_al@outlook.com'
 	)
-
-DROP TABLE usuarios
